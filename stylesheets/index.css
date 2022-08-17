@@ -1,0 +1,38 @@
+body {
+    margin: 0;
+}
+
+.slider-image  {
+    max-width: 100%;
+    height: auto;
+}
+
+.display-block {
+    display: block;
+}
+
+.display-none {
+    display: none;
+}
+
+.relative-parent {
+    position: relative;
+}
+
+.slider-buttons-container {
+    display: flex;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    justify-content: space-between;
+    padding:0 5%;
+    box-sizing: border-box;
+}
+
+.slider-button {
+    font-size: 3em;
+    color: #262922;
+    background-color: white;
+    border-radius: 50px;
+}
