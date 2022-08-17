@@ -63,6 +63,7 @@ const automaticSlider = setInterval(overlap, 2700);
 
 function changeSlide(rotation) {
     const currentImages = document.querySelectorAll('.slider-image');
+    images[currentIndex].selected = false;
     currentImages[currentIndex].classList.remove('display-block');
     currentImages[currentIndex].classList.add('display-none');
 
