@@ -28,7 +28,16 @@ function createSlider() {
         imagesContainer.appendChild(img)
     }
 }
+
 createSlider();
+
+
+function resetSliderOrder(index, imagesList) {
+    images[index].selected = true;
+    currentIndex = index;
+    imagesList[index].classList.remove('display-none');
+    imagesList[index].classList.add('display-block');
+}
 
 
 function overlap() {
@@ -40,20 +49,15 @@ function overlap() {
             currentImages[i].classList.remove('display-block');
             currentImages[i].classList.add('display-none');
             if (i === currentImages.length - 1) {
-                images[0].selected = true;
-                currentIndex = 0;
-                currentImages[0].classList.remove('display-none');
-                currentImages[0].classList.add('display-block');
+                resetSliderOrder(0, currentImages);
             } else {
-                images[i + 1].selected = true;
-                currentIndex = i + 1;
-                currentImages[i + 1].classList.remove('display-none');
-                currentImages[i + 1].classList.add('display-block');
+                resetSliderOrder(i + 1, currentImages);
             }
             break;
         }
     }
 }
+
 const automaticSlider = setInterval(overlap, 2700);
 
 
@@ -65,28 +69,21 @@ function changeSlide(rotation) {
     if (rotation === 'right') {
         clearInterval(automaticSlider);
         if (currentIndex === currentImages.length - 1) {
-            currentIndex = 0;
-            currentImages[0].classList.remove('display-none');
-            currentImages[0].classList.add('display-block');
+            resetSliderOrder(0, currentImages);
         } else {
-            currentImages[currentIndex + 1].classList.remove('display-none');
-            currentImages[currentIndex + 1].classList.add('display-block');
-            currentIndex += 1;
+            resetSliderOrder(currentIndex + 1, currentImages)
         }
     }
     if (rotation === 'left') {
         clearInterval(automaticSlider);
         if (currentIndex === 0) {
-            currentIndex = currentImages.length - 1;
-            currentImages[currentImages.length - 1].classList.remove('display-none');
-            currentImages[currentImages.length - 1].classList.add('display-block');
+            resetSliderOrder(currentImages.length - 1, currentImages);
         } else {
-            currentImages[currentIndex - 1].classList.remove('display-none');
-            currentImages[currentIndex - 1].classList.add('display-block');
-            currentIndex -= 1;
+            resetSliderOrder(currentIndex - 1, currentImages);
         }
     }
 }
+
 let left = document.getElementById('left-slider-btn');
 let right = document.getElementById('right-slider-btn');
 left.addEventListener('click', () => {
@@ -95,28 +92,3 @@ left.addEventListener('click', () => {
 right.addEventListener('click', () => {
     changeSlide('right')
 });
-
-
-function overlap() {
-    const currentImages = document.querySelectorAll('.slider-image');
-
-    for (let i = currentIndex; i < currentImages.length; i++) {
-        if (images[i].selected === true) {
-            images[i].selected = false;
-            currentImages[i].classList.remove('display-block');
-            currentImages[i].classList.add('display-none');
-            if (i === currentImages.length - 1) {
-                images[0].selected = true;
-                currentIndex = 0;
-                currentImages[0].classList.remove('display-none');
-                currentImages[0].classList.add('display-block');
-            } else {
-                images[i + 1].selected = true;
-                currentIndex = i + 1;
-                currentImages[i + 1].classList.remove('display-none');
-                currentImages[i + 1].classList.add('display-block');
-            }
-            break;
-        }
-    }
-}
