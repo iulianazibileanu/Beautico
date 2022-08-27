@@ -3,18 +3,116 @@
 <head>
     <meta charset="UTF-8">
     <title>Beautico</title>
-    <link rel="stylesheet" href="stylesheets/index.css"/>
+    <link rel="stylesheet" href="stylesheets/home-slider.css"/>
+    <link rel="stylesheet" href="stylesheets/navbar.css"/>
+    <link href='https://css.gg/menu-left.css' rel='stylesheet'/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital@1&family=Playfair+Display:ital@1&family=Poppins&display=swap"
+          rel="stylesheet">
     <script src="https://kit.fontawesome.com/2d5f096f88.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <div class="relative-parent">
-        <div id="slider-images"></div>
-        <div class="slider-buttons-container">
-            <i id="left-slider-btn" class="fa-solid fa-circle-chevron-left slider-button"></i>
-            <i id="right-slider-btn" class="fa-solid fa-circle-chevron-right slider-button"></i>
+<div class="relative-parent slider-with-buttons">
+    <div id="slider-images"></div>
+    <div class="slider-buttons-container">
+        <i id="left-slider-btn" class="fa-solid fa-circle-chevron-left slider-button"></i>
+        <i id="right-slider-btn" class="fa-solid fa-circle-chevron-right slider-button"></i>
+    </div>
+</div>
+<div class="nav-dropdown-container go-up">
+    <nav class="nav-backgr">
+        <div class="menu-container" id="menu">
+            <div class="menu-icon">
+                <i class="fa-solid fa-minus menu-icon-line top-menu-line" id="top-menu-line"></i>
+                <i class="fa-solid fa-minus menu-icon-line" id="middle-menu-line"></i>
+                <i class="fa-solid fa-minus menu-icon-line bottom-menu-line" id="bottom-menu-line"></i>
+            </div>
+            <span class="menu-text">menu</span>
+        </div>
+        <a href="index.html"><img src="/assets/images/logo.png" alt="Beautico" class="logo"/></a>
+        <div class="user-panel">
+            <i class="fa fa-search search-icon panel-icon"></i>
+            <i class="fa fa-user user-icon panel-icon"></i>
+            <div class="cart-container">
+                <i class="fa-solid fa-cart-shopping cart-icon panel-icon"></i>
+                <span class="cart-items-number">0</span>
+            </div>
+        </div>
+    </nav>
+    <ul class="menu-list" id="menu-list">
+        <li class="expandable" id="cosmetology">Cosmetology</li>
+        <li class="expandable" id="cosmetics">Cosmetics</li>
+        <li>Brow bleaching</li>
+        <li>Makeup Bases</li>
+        <li>Hair Coloring</li>
+        <li class="expandable" id="more">More</li>
+    </ul>
+    <div class="dropdown-menu" id="cosmetology-submenus">
+        <div class="submenu">
+            <a href="index.html" class="submenu-title">BB Cream</a>
+            <ul class="submenu-list">
+                <li>Beauty Micrometer</li>
+                <li>Beauty Salon</li>
+                <li>Biomesotherapy</li>
+                <li>CC Cream</li>
+            </ul>
+        </div>
+        <div class="submenu">
+            <a href="index.html" class="submenu-title">Cosmeceutical</a>
+            <ul class="submenu-list">
+                <li>Camouflage</li>
+                <li>Cosmetic Container</li>
+                <li>Cotton Pads</li>
+                <li>Packaging</li>
+            </ul>
+        </div>
+        <div class="submenu">
+            <a href="index.html" class="submenu-title">BITE Beauty</a>
+            <ul class="submenu-list">
+                <li>Blotting Paper</li>
+                <li>Body Powder</li>
+                <li>Cold Cream</li>
+                <li>Undereye Cream</li>
+            </ul>
+        </div>
+        <div class="submenu">
+            <a href="index.html" class="submenu-title">Eye Liner</a>
+            <ul class="submenu-list">
+                <li>Brush Eyeliner</li>
+                <li>Eyeshadow</li>
+                <li>Liquid Eyeliner</li>
+                <li>Pencils</li>
+            </ul>
         </div>
     </div>
 
-    <script src="scripts/index.js"></script>
+    <div class="dropdown-menu" id="cosmetics-submenus">
+        <div class="submenu">
+            <a href="index.html" class="submenu-title">Herbal Distillate</a>
+            <ul class="submenu-list">
+                <li>Lipstick</li>
+                <li>Makeover</li>
+                <li>Makeup</li>
+            </ul>
+        </div>
+        <div class="submenu">
+            <a href="index.html" class="submenu-title">Beauty Mark</a>
+            <ul class="submenu-list">
+                <li>Face Forward</li>
+                <li>Face Powder</li>
+                <li>Facial Toning</li>
+            </ul>
+        </div>
+    </div>
+
+    <ul id="more-dropdown">
+        <li>Anti-Aging Cream</li>
+        <li>Blushers</li>
+        <li>Blogs</li>
+    </ul>
+</div>
+
+<script src="scripts/index.js"></script>
 </body>
 </html>
