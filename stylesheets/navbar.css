@@ -1,0 +1,233 @@
+.nav-backgr {
+    background-color: rgba(0, 0, 0, 0.20);
+    height: 116px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5%;
+    box-sizing: border-box;
+}
+
+.go-up {
+    position: absolute;
+    top: 0;
+}
+
+.menu-text {
+    padding-left: 1.5em;
+    letter-spacing: 1.7px;
+    text-transform: uppercase;
+    font-family: 'Poppins', sans-serif;
+}
+
+.menu-icon {
+    font-size: 2em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.top-menu-line {
+    position: relative;
+    bottom: -18px;
+}
+
+.bottom-menu-line {
+    position: relative;
+    top: -18px;
+}
+
+.menu-container {
+    display: flex;
+    align-items: center;
+    font-size: 0.8em;
+    color: #ebece7;
+    cursor: pointer;
+}
+
+.top-move {
+    transition: transform 0.2s ;
+    transform: rotate(45deg) translateY(-7.2px);
+}
+
+.bottom-move {
+    transition: transform 0.2s ;
+    transform: rotate(-45deg) translateY(7.2px);
+}
+
+
+.logo {
+    height: 47%;
+    width: auto;
+    margin: 0 auto;
+}
+
+.user-panel {
+    display: flex;
+    font-size: 1.3em;
+    color:#d3d7cd;
+}
+
+.panel-icon {
+    margin: 0 15px;
+    cursor: pointer;
+}
+
+.panel-icon:hover {
+    transition: transform 0.5s;
+    transform: rotateY(180deg);
+    transition-timing-function: ease-in-out;
+}
+
+.panel-icon:not(:hover){
+    transition: transform 0.5s;
+    transform: rotateY(360deg);
+}
+
+.cart-items-number {
+    font-size: 0.6em;
+    font-family: "Poppins",Helvetica,sans-serif;
+    font-weight: bold;
+    background-color: #9bb465;
+    border-radius: 50%;
+    width: 16px;
+    height: 16px;
+    position: relative;
+    left: -21%;
+    cursor: pointer;
+    text-align: center;
+    line-height: 16px;
+}
+
+.cart-container {
+    display: flex;
+    align-items: flex-start;
+}
+
+.nav-dropdown-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.menu-list {
+    list-style-type: none;
+    height: 94px;
+    width: 100%;
+    background-color: white;
+    margin: 0;
+    padding-left: 10%;
+    box-sizing: border-box;
+    display: none;
+}
+
+.menu-list li {
+    display: inline-block;
+    font-family: 'Playfair Display', serif;
+    letter-spacing: 0.9px;
+    color: #242424;
+    font-size: 20.2px;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 33px 20px;
+    cursor: pointer;
+}
+
+.expandable::after {
+    content: "\f107";
+    font-weight: 600;
+    font-size: 9px;
+    font-family: "Font Awesome 6 Free";
+    position: relative;
+    top: -5.7px;
+    left: 6.5px;
+    font-style: italic;
+}
+
+.expandable:hover::after {
+    content: "\f106";
+    font-weight: 600;
+    font-size: 9px;
+    font-family: "Font Awesome 6 Free";
+    position: relative;
+    top: -5.7px;
+    left: 6.5px;
+    font-style: italic;
+    color: #95c629;
+}
+
+.dropdown-menu {
+    height: 36.4%;
+    background-color: white;
+    display: flex;
+    justify-content: flex-start;
+    padding: 31px 87px 31px 143px;
+    border-top: 0.1px solid rgba(210, 210, 210, 0.4);
+    box-sizing: border-box;
+    display: none;
+}
+
+.dropdown-menu:hover {
+    display: flex;
+}
+
+.submenu {
+    width: 19.5%;
+    padding: 17px 25px;
+}
+
+.submenu-title {
+    text-decoration: none;
+    color: rgba(23, 23, 23, 0.96);
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    letter-spacing: 1px;
+    font-size: 16px;
+}
+
+.submenu-title::after {
+    content: "";
+    position: relative;
+    top: 6px;
+    background-color: rgba(210, 210, 210, 0.4);
+    display: block;
+    height: 0.1px;
+}
+
+.submenu-list {
+    list-style-type: none;
+    padding: 6.5px 0 0 0;
+}
+
+.submenu-list li {
+    padding-bottom: 7.2px;
+    font-family: 'Poppins', sans-serif;
+    color: #818181;
+    letter-spacing: 1px;
+    font-size: 14.9px;
+    cursor: pointer;
+}
+
+#more-dropdown {
+    background-color: white;
+    font-family: 'Poppins', sans-serif;
+    color: #818181;
+    letter-spacing: 1px;
+    font-size: 14.9px;
+    cursor: pointer;
+    list-style-type: none;
+    width: 10%;
+    height: auto;
+    padding: 23px 20px 13px 18px;
+    border: 0.1px solid rgba(210, 210, 210, 0.4);
+    margin: 0;
+    display:none;
+    position: relative;
+    left: 1003px;
+}
+
+#more-dropdown li {
+    padding-bottom: 10px;
+}
