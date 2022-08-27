@@ -93,3 +93,81 @@ left.addEventListener('click', () => {
 right.addEventListener('click', () => {
     changeSlide('right')
 });
+
+
+//NAVBAR
+let clicked = true;
+function showMenuList() {
+    let topLine = document.getElementById('top-menu-line');
+    let middleLine = document.getElementById('middle-menu-line');
+    let bottomLine = document.getElementById('bottom-menu-line');
+    let menuList = document.getElementById('menu-list');
+
+    if (clicked===true) {
+        middleLine.style.display = 'none';
+        topLine.classList.add('top-move');
+        bottomLine.classList.add('bottom-move');
+        menuList.style.display = 'block';
+        clicked = false;
+    } else {
+        middleLine.style.display = 'inline-block';
+        topLine.classList.remove('top-move');
+        bottomLine.classList.remove('bottom-move');
+        menuList.style.display = 'none';
+        clicked = true;
+    }
+}
+let menu = document.getElementById('menu');
+menu.addEventListener("click", showMenuList);
+
+//dropdown submenus
+//cosmetology
+let cosmetologySubmenus = document.getElementById('cosmetology-submenus');
+let cosmetology = document.getElementById('cosmetology');
+
+function showDropdownCosmetology() {
+    cosmetologySubmenus.style.display='flex';
+}
+
+function hideDropdownCosmetology() {
+    cosmetologySubmenus.style.display='none';
+}
+
+cosmetology.addEventListener('mouseover', showDropdownCosmetology);
+cosmetologySubmenus.addEventListener('mouseover', showDropdownCosmetology);
+cosmetology.addEventListener('mouseout', hideDropdownCosmetology);
+cosmetologySubmenus.addEventListener('mouseleave', hideDropdownCosmetology);
+
+//cosmetics
+let cosmeticsSubmenus = document.getElementById('cosmetics-submenus');
+let cosmetics = document.getElementById('cosmetics');
+
+function showDropdownCosmetics() {
+    cosmeticsSubmenus.style.display='flex';
+}
+
+function hideDropdownCosmetics() {
+    cosmeticsSubmenus.style.display='none';
+}
+
+cosmetics.addEventListener('mouseover', showDropdownCosmetics);
+cosmeticsSubmenus.addEventListener('mouseover', showDropdownCosmetics);
+cosmetics.addEventListener('mouseout', hideDropdownCosmetics);
+cosmeticsSubmenus.addEventListener('mouseleave', hideDropdownCosmetics);
+
+//more
+let moreSubmenu = document.getElementById('more-dropdown');
+let more = document.getElementById('more');
+
+function showDropdownMore() {
+    moreSubmenu.style.display='inline-block';
+}
+
+function hideDropdownMore() {
+    moreSubmenu.style.display='none';
+}
+
+more.addEventListener('mouseover', showDropdownMore);
+moreSubmenu.addEventListener('mouseover', showDropdownMore);
+more.addEventListener('mouseout', hideDropdownMore);
+moreSubmenu.addEventListener('mouseleave', hideDropdownMore);
